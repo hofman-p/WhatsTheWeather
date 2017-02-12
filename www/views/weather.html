@@ -1,0 +1,24 @@
+<!-- Weather view -->
+
+<ion-view>
+  <ion-nav-title>Weather City</ion-nav-title>
+  <ion-content overflow-scroll="false">
+
+    <div class="item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search" placeholder="Bordeaux, fr" ng-model="cityName">
+      </label>
+      <button class="button icon ion-search" ng-click="GetWeatherFromCity(cityName)"></button>
+    </div>
+
+    <div ng-if="didResearch" class="list">
+        <a class="item item-avatar" href="#">
+          <img ng-src="{{weatherData.icon}}">
+          <h2>{{weatherData.name}}</h2>
+          <p>Current conditions: {{weatherData.weather[0].main}}</p>
+          <p>Temp: {{weatherData.main.temp}} °C</p>
+        </a>
+    </div>
+  </ion-content>
+</ion-view>
